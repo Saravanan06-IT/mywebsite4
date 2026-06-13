@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM | Graduation Verification</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="background-color: #f1f3f5;">
+
+    <div class="print-actions-toolbar">
+        <button class="btn-primary" onclick="window.print();"><i class="fas fa-print"></i> Print / Save as PDF Certificate</button>
+        <button class="btn-explore" onclick="window.location.href='dashboard.html';" style="background-color: #555;">Return to Dashboard</button>
+    </div>
+
+    <div class="certificate-canvas">
+        
+        <div class="cert-branding-sidebar">
+            <div class="cert-logo-wrapper">
+                <i class="fas fa-book-open"></i>
+                <span>LEARN WITH TOM</span>
+            </div>
+            
+            <div class="cert-qr-wrapper">
+                <i class="fas fa-qrcode"></i>
+            </div>
+        </div>
+
+        <div class="cert-content-body">
+            
+            <div class="cert-gold-badge-container">
+                <div class="gold-seal-badge">
+                    <span class="star-row"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></span>
+                    <strong id="certYearDisplay">2026</strong>
+                    <small>AWARDED</small>
+                </div>
+                <div class="ribbon-tail"></div>
+            </div>
+
+            <h1 class="cert-main-header">CERTIFICATE</h1>
+            <h2 class="cert-sub-header">OF COMPLETION</h2>
+            
+            <p class="cert-intro-text">We proudly present this certificate to</p>
+            
+            <div class="cert-recipient-name" id="certStudentName">[Student Name]</div>
+            
+            <p class="cert-verification-declaration">
+                honouring completion of the course: <strong id="certCourseTitle">"AI Engineering Professional Certificate"</strong><br>
+                <span>For the ability to objectively assess and implement advanced technology solutions.</span>
+            </p>
+
+            <div class="cert-signature-row">
+                <div class="sig-block">
+                    <div class="sig-line script-font">Saravanan TS</div>
+                    <strong>Saravanan TS</strong>
+                    <span>COURSE AUTHOR</span>
+                </div>
+                <div class="sig-block">
+                    <div class="sig-line script-font">Tom</div>
+                    <strong>LEARN WITH TOM</strong>
+                    <span>OFFICIAL VERIFICATION</span>
+                </div>
+            </div>
+
+            <div class="cert-hash-tracker" id="certHashString">Verification ID: 2f1b8c69-d5a3-4c2a-9e7f-3b9d0a6f7e21</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

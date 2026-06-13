@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEARN WITH TOM | Search Results</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">LEARN WITH TOM</a>
+            <button class="btn-explore" id="exploreBtn">Explore <i class="fas fa-chevron-down"></i></button>
+            <div class="search-container">
+                <input type="text" placeholder="What do you want to learn?" id="searchInput">
+                <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="enterprise.html" class="nav-link">For Enterprise</a>
+            <a href="students.html" class="nav-link">For Students</a>
+            <a href="login.html" class="login-link">Log In</a>
+            <a href="signup.html" class="btn-primary-link"><button class="btn-primary">Join for Free</button></a>
+        </div>
+    </header>
+
+    <div class="results-layout">
+        
+        <aside class="filter-sidebar">
+            <div class="filter-section">
+                <h3>Level of Expertise</h3>
+                <label class="filter-checkbox-label">
+                    <input type="checkbox" class="filter-checkbox filter-level" value="Beginner"> Beginner
+                </label>
+                <label class="filter-checkbox-label">
+                    <input type="checkbox" class="filter-checkbox filter-level" value="Intermediate"> Intermediate
+                </label>
+                <label class="filter-checkbox-label">
+                    <input type="checkbox" class="filter-checkbox filter-level" value="Advanced"> Advanced
+                </label>
+            </div>
+
+            <div class="filter-section">
+                <h3>Budget & Certification</h3>
+                <label class="filter-checkbox-label">
+                    <input type="checkbox" class="filter-checkbox filter-budget" value="Free"> Free Online Tutorials
+                </label>
+                <label class="filter-checkbox-label">
+                    <input type="checkbox" class="filter-checkbox filter-budget" value="Paid"> Paid Professional Certificates
+                </label>
+                <label class="filter-checkbox-label">
+                    <input type="checkbox" class="filter-checkbox filter-budget" value="University"> University Certifications
+                </label>
+            </div>
+        </aside>
+
+        <main class="results-main-panel">
+            <h2 id="searchQueryHeading">Showing Results for...</h2>
+            <p id="resultsCount">0 courses found</p>
+            
+            <div id="courseResultsContainer" class="course-results-grid">
+                </div>
+        </main>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

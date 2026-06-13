@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM | My Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="dashboard.html" class="logo">TOM</a>
+            <button class="btn-explore" id="exploreBtn">Explore <i class="fas fa-chevron-down"></i></button>
+            <div class="search-container">
+                <input type="text" placeholder="What do you want to learn today?" id="searchInput">
+                <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="#" class="nav-link">My Learning</a>
+            <a href="#" class="notification-icon"><i class="far fa-bell" style="font-size: 20px; color: #555;"></i></a>
+            <div class="user-avatar">S</div>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <section class="welcome-banner">
+            <h1>Welcome back, Student!</h1>
+            <p>Pick up right where you left off. You have 2 courses in progress this week.</p>
+        </section>
+
+        <div class="dashboard-grid">
+            
+            <section class="main-dashboard-content">
+                <h2 class="section-title">In Progress</h2>
+                
+                <div class="course-card-horizontal">
+                    <div class="course-image-placeholder python-bg">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div class="course-card-details">
+                        <span class="partner-tag">TOM Course Ecosystem</span>
+                        <h3>Python Programming for Beginners</h3>
+                        <p>Next up: Understanding lists, tuples, and loops dictionaries.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 65%;"></div>
+                        </div>
+                        <span class="progress-text">65% Complete</span>
+                        <button class="btn-primary resume-btn">Resume Course</button>
+                    </div>
+                </div>
+
+                <div class="course-card-horizontal">
+                    <div class="course-image-placeholder web-bg">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="course-card-details">
+                        <span class="partner-tag">Meta Professional Training</span>
+                        <h3>Introduction to Front-End Web Development</h3>
+                        <p>Next up: Master CSS Flexbox alignments and grid properties.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar" style="width: 20%;"></div>
+                        </div>
+                        <span class="progress-text">20% Complete</span>
+                        <button class="btn-primary resume-btn">Resume Course</button>
+                    </div>
+                </div>
+            </section>
+
+            <aside class="dashboard-sidebar">
+                <div class="sidebar-card">
+                    <h3>Weekly Goal</h3>
+                    <p class="goal-subtext">Set a learning habit to reach your career targets.</p>
+                    <div class="stat-box">
+                        <span class="stat-number">3 / 5</span>
+                        <span class="stat-label">Days target met</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>Recommended for You</h3>
+                    <ul class="recommendation-list">
+                        <li><a href="#">Data Science Fundamentals</a></li>
+                        <li><a href="#">Advanced Git Workflow Models</a></li>
+                        <li><a href="#">Building Single Page Apps with React</a></li>
+                    </ul>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

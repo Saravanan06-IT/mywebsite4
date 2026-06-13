@@ -1,0 +1,752 @@
+/* ==========================================================================
+   1. CORE GLOBAL CONFIGURATION & RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #1f1f1f;
+}
+
+.btn-primary-link {
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* ==========================================================================
+   2. REUSABLE STICKY NAVIGATION BAR
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    border-bottom: 1px solid #e5e5e5;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 1000;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0056d2;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+}
+
+.btn-explore {
+    background-color: #0056d2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-explore i {
+    font-size: 10px;
+    margin-left: 6px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #757575;
+    border-radius: 4px;
+    width: 450px;
+    overflow: hidden;
+}
+
+.search-container input {
+    border: none;
+    padding: 10px 14px;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-btn {
+    background-color: #0056d2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+}
+
+.nav-link, .login-link {
+    text-decoration: none;
+    color: #1f1f1f;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 0;
+}
+
+.nav-link:hover, .login-link:hover {
+    color: #0056d2;
+}
+
+.btn-primary {
+    background-color: #0056d2;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.nav-link.active, .login-link.active {
+    color: #0056d2;
+    font-weight: bold;
+    border-bottom: 2px solid #0056d2;
+}
+
+/* ==========================================================================
+   3. HOMEPAGE COMPONENTS (Hero & Partners)
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    height: 460px;
+    background-image: url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, rgba(10, 25, 47, 0.9) 30%, rgba(0, 86, 210, 0.4) 100%);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    max-width: 550px;
+}
+
+.hero-content h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.btn-hero {
+    background-color: #ffffff;
+    color: #0056d2;
+    border: none;
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.partners-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+.partners-section h3 {
+    color: #636363;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 40px;
+}
+
+.partner-logo { font-size: 20px; font-weight: bold; color: #555555; }
+.illinois { color: #f58220; font-family: serif; }
+.duke { color: #001A57; font-family: serif; }
+.google { color: #4285F4; }
+.michigan { background-color: #00274c; color: #ffcb05; padding: 2px 8px; font-family: serif; }
+.ibm { color: #0b43a8; font-style: italic; font-size: 24px; }
+.imperial { color: #003145; }
+.stanford { color: #8c1515; font-family: serif; }
+.penn { color: #990000; font-family: serif; }
+
+.goals-section { text-align: center; padding: 60px 20px; }
+.goals-section h2 { font-size: 32px; }
+
+/* ==========================================================================
+   4. STATIC INNER MARKETING & INFRASTRUCTURE PAGES
+   ========================================================================== */
+.page-content {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 40px;
+    text-align: center;
+}
+
+.page-content h1 { font-size: 38px; margin-bottom: 20px; color: #1f1f1f; }
+.page-content p { font-size: 18px; color: #555555; max-width: 700px; margin: 0 auto 30px auto; line-height: 1.6; }
+.action-wrapper { margin-top: 20px; }
+
+.form-card {
+    background: #ffffff; border: 1px solid #e5e5e5; padding: 40px;
+    max-width: 450px; margin: 0 auto; border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); text-align: left;
+}
+.form-card h2 { font-size: 28px; margin-bottom: 24px; }
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+.input-group input { width: 100%; padding: 12px; border: 1px solid #757575; border-radius: 4px; font-size: 14px; outline: none; }
+.input-group input:focus { border-color: #0056d2; }
+.form-submit-btn { width: 100%; padding: 14px; font-size: 16px; margin-top: 10px; }
+.form-footer-text { margin-top: 20px; font-size: 14px; text-align: center; }
+.form-footer-text a { color: #0056d2; text-decoration: none; font-weight: bold; }
+
+/* ==========================================================================
+   5. SEARCH ENGINE CATALOG MIX SPLIT VIEW LAYOUT
+   ========================================================================== */
+.results-layout {
+    display: grid; grid-template-columns: 280px 1fr;
+    max-width: 1300px; margin: 30px auto; padding: 0 40px; gap: 40px;
+}
+.filter-sidebar { background-color: #ffffff; border-right: 1px solid #e5e5e5; padding-right: 20px; align-self: start; }
+.filter-section { margin-bottom: 30px; }
+.filter-section h3 { font-size: 16px; font-weight: bold; margin-bottom: 14px; color: #1f1f1f; }
+.filter-checkbox-label { display: flex; align-items: center; gap: 10px; font-size: 14px; color: #404040; margin-bottom: 10px; cursor: pointer; }
+.filter-checkbox { width: 16px; height: 16px; accent-color: #0056d2; }
+
+.results-main-panel { display: flex; flex-direction: column; }
+#searchQueryHeading { font-size: 26px; font-weight: bold; margin-bottom: 4px; }
+#resultsCount { font-size: 14px; color: #636363; margin-bottom: 24px; }
+
+.course-results-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+.course-display-card { background: #ffffff; border: 1px solid #dcdcdc; border-radius: 6px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; }
+.course-display-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.card-meta-category { font-size: 11px; font-weight: bold; color: #636363; text-transform: uppercase; margin-bottom: 8px; display: block; }
+.course-display-card h4 { font-size: 16px; font-weight: bold; color: #1f1f1f; line-height: 1.4; margin-bottom: 10px; }
+
+.badge-row { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.badge-item { font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 600; }
+.badge-level { background-color: #f1f3f5; color: #495057; }
+.badge-budget { background-color: #e8f0fe; color: #1a73e8; }
+.btn-view-course { width: 100%; text-align: center; background-color: #f8f9fa; color: #0056d2; border: 1px solid #0056d2; padding: 10px; font-size: 13px; font-weight: bold; border-radius: 4px; cursor: pointer; text-decoration: none; }
+.btn-view-course:hover { background-color: #0056d2; color: #ffffff; }
+
+/* ==========================================================================
+   6. USER DASHBOARD LAYOUT STYLES
+   ========================================================================== */
+.dashboard-container { max-width: 1200px; margin: 40px auto; padding: 0 40px; }
+.welcome-banner { margin-bottom: 40px; }
+.welcome-banner h1 { font-size: 32px; font-weight: bold; margin-bottom: 8px; }
+.welcome-banner p { color: #555555; font-size: 16px; }
+.dashboard-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+.section-title { font-size: 22px; margin-bottom: 20px; border-bottom: 1px solid #e5e5e5; padding-bottom: 10px; }
+.course-card-horizontal { display: flex; border: 1px solid #e5e5e5; border-radius: 8px; overflow: hidden; margin-bottom: 24px; background: #ffffff; }
+.course-image-placeholder { width: 200px; display: flex; align-items: center; justify-content: center; font-size: 50px; color: #ffffff; }
+.python-bg { background-color: #3776AB; }
+.web-bg { background-color: #264de4; }
+.course-card-details { padding: 24px; flex: 1; }
+.partner-tag { font-size: 12px; color: #636363; text-transform: uppercase; font-weight: bold; display: block; margin-bottom: 6px; }
+.course-card-details h3 { font-size: 20px; margin-bottom: 8px; }
+.course-card-details p { font-size: 14px; color: #555555; margin-bottom: 16px; }
+.progress-container { background-color: #e5e5e5; border-radius: 4px; height: 8px; width: 100%; margin-bottom: 6px; overflow: hidden; }
+.progress-bar { background-color: #0056d2; height: 100%; }
+.progress-text { font-size: 12px; color: #636363; display: block; margin-bottom: 16px; }
+.resume-btn { padding: 8px 16px; font-size: 13px; }
+.sidebar-card { background-color: #f8f9fa; border: 1px solid #e5e5e5; border-radius: 8px; padding: 24px; margin-bottom: 24px; }
+.sidebar-card h3 { font-size: 18px; margin-bottom: 8px; }
+.goal-subtext { font-size: 13px; color: #636363; margin-bottom: 16px; }
+.stat-box { background: #ffffff; border: 1px solid #e5e5e5; padding: 16px; border-radius: 6px; text-align: center; }
+.stat-number { font-size: 28px; font-weight: bold; color: #0056d2; display: block; }
+.stat-label { font-size: 12px; color: #555; }
+.recommendation-list { list-style: none; }
+.recommendation-list li { margin-bottom: 12px; }
+.recommendation-list a { color: #0056d2; text-decoration: none; font-size: 14px; font-weight: 500; }
+.recommendation-list a:hover { text-decoration: underline; }
+.user-avatar { width: 36px; height: 36px; background-color: #0056d2; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; cursor: pointer; }
+
+/* ==========================================================================
+   7. RESPONSIVENESS BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 900px) {
+    .navbar { padding: 12px 20px; }
+    .search-container { width: 200px; }
+    .nav-left, .nav-right { gap: 12px; }
+    .hero-section { padding: 0 40px; }
+    .hero-content h1 { font-size: 32px; }
+    .results-layout { grid-template-columns: 1fr; gap: 20px; }
+    .filter-sidebar { border-right: none; border-bottom: 1px solid #e5e5e5; padding-bottom: 15px; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .course-card-horizontal { flex-direction: column; }
+    .course-image-placeholder { width: 100%; height: 120px; }
+}
+/* ==========================================================================
+   8. COURSE DETAIL PAGE & POPULAR GRID SHELVES
+   ========================================================================== */
+
+/* Sub Header Tab Styling */
+.sub-nav-tabs {
+    background-color: #1f1f1f;
+    padding: 10px 40px;
+}
+
+.tabs-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    gap: 20px;
+}
+
+.tab-item {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 4px 8px;
+}
+
+.tab-item.active, .tab-item:hover {
+    color: #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+/* Split-Panel Promo Hero Layout */
+.detail-hero-wrapper {
+    background-color: #ffffff;
+    padding: 30px 40px;
+}
+
+.detail-grid-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px;
+}
+
+/* Individual Card Styling rules */
+.promo-banner-card {
+    border-radius: 16px;
+    padding: 35px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 320px;
+    overflow: hidden;
+}
+
+/* Theme 1: Left Plus Card Banner */
+.plus-tier {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffcc80 50%, #1a73e8 100%);
+    border: 1px solid #ffe0b2;
+}
+
+/* Theme 2: Right Teams Card Banner */
+.teams-tier {
+    background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
+    color: #ffffff;
+}
+
+/* Labels and tag lines inside cards */
+.tier-tag {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #0056d2;
+    margin-bottom: 12px;
+}
+
+.tier-tag span {
+    background-color: #0056d2;
+    color: white;
+    padding: 1px 4px;
+    border-radius: 2px;
+}
+
+.tier-tag.grey {
+    color: #e0e0e0;
+}
+
+.promo-banner-card h1 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1f1f1f;
+    margin-bottom: 8px;
+}
+
+.promo-banner-card h2 {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.3;
+}
+
+.promo-banner-card p {
+    font-size: 14px;
+    color: #404040;
+    line-height: 1.5;
+    max-width: 420px;
+    margin: 0;
+}
+
+.teams-tier p {
+    color: #e0e0e0;
+}
+
+/* Pricing Layout Matrix */
+.price-display {
+    margin: 15px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.old-price {
+    font-size: 16px;
+    text-decoration: line-through;
+    color: #757575;
+}
+
+.current-price {
+    font-size: 32px;
+    font-weight: 800;
+    color: #d84315;
+}
+
+.current-price small {
+    font-size: 14px;
+    font-weight: normal;
+    color: #404040;
+}
+
+/* Interactive Banner Navigation Control */
+.btn-action-banner {
+    align-self: start;
+    border: none;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.text-light { background-color: #0056d2; color: #ffffff; }
+.text-blue { background-color: #ffffff; color: #0056d2; }
+
+/* Mini graphics elements inside layers */
+.discount-badge-circle {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    width: 110px;
+    height: 110px;
+    background-color: #ffb300;
+    border-radius: 50%;
+    color: #1f1f1f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.discount-badge-circle strong { font-size: 16px; font-weight: 900; }
+.discount-badge-circle span { font-size: 10px; font-weight: 600; line-height: 1.1; }
+
+.partner-logos-mini {
+    display: flex;
+    gap: 15px;
+    color: #757575;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+/* Content Columns Shelf blocks */
+.suggestions-section {
+    max-width: 1300px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+
+.shelf-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.shelves-container-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.shelf-column {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+}
+
+.shelf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.shelf-header h3 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #1f1f1f;
+}
+
+.shelf-header i {
+    font-size: 12px;
+    color: #0056d2;
+    cursor: pointer;
+}
+
+/* Mini Inline rows item cards description */
+.mini-course-row {
+    display: flex;
+    gap: 16px;
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+.mini-course-row:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.mini-img-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: white;
+    flex-shrink: 0;
+}
+
+/* Quick gradient variations for custom icon branding placeholders */
+.blue-gradient { background: linear-gradient(45deg, #1e3c72, #2a5298); }
+.purple-gradient { background: linear-gradient(45deg, #6a11cb, #2575fc); }
+.dark-gradient { background: linear-gradient(45deg, #3a6073, #3a6073); }
+.orange-gradient { background: linear-gradient(45deg, #f12711, #f5af19); }
+.color-gradient { background: linear-gradient(45deg, #11998e, #38ef7d); }
+
+.mini-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mini-info .provider {
+    font-size: 11px;
+    color: #757575;
+    margin-bottom: 2px;
+}
+
+.mini-info h4 {
+    font-size: 13px;
+    font-weight: bold;
+    color: #1f1f1f;
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.mini-info .type-rating {
+    font-size: 11px;
+    color: #636363;
+}
+
+.text-gold { color: #f5af19; }
+
+/* Responsive break settings overrides */
+@media (max-width: 1000px) {
+    .detail-grid-container { grid-template-columns: 1fr; }
+    .shelves-container-grid { grid-template-columns: 1fr; }
+}
+/* ==========================================================================
+   9. E-LEARNING INTERACTIVE WORKSPACE LAYOUT & SIDEBAR
+   ========================================================================== */
+.workspace-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    height: calc(100vh - 65px);
+    background-color: #ffffff;
+}
+
+.video-main-panel {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background-color: #000000;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.materials-tab { margin-top: 24px; }
+.materials-tab h3 { font-size: 20px; margin-bottom: 10px; }
+.materials-tab p { font-size: 14px; color: #555; line-height: 1.6; text-align: left; margin-bottom: 20px;}
+
+.download-resources { display: flex; gap: 20px; }
+.resource-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 16px; border: 1px solid #0056d2; color: #0056d2;
+    text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: 600;
+}
+.resource-link:hover { background-color: #e8f0fe; }
+
+/* Syllabus Curriculum Playlist sidebar panel styling */
+.syllabus-sidebar {
+    background-color: #f8f9fa; border-left: 1px solid #e5e5e5;
+    padding: 20px; overflow-y: auto;
+}
+.syllabus-sidebar h3 { font-size: 16px; margin-bottom: 20px; border-bottom: 2px solid #e5e5e5; padding-bottom: 8px;}
+.module-group { margin-bottom: 24px; }
+.module-group-header { font-size: 13px; font-weight: bold; color: #636363; text-transform: uppercase; margin-bottom: 10px; }
+.lecture-item {
+    display: flex; align-items: center; gap: 12px; padding: 12px;
+    border-radius: 4px; font-size: 13px; color: #333; cursor: pointer; margin-bottom: 4px;
+}
+.lecture-item:hover { background-color: #e9ecef; }
+.lecture-item.item-active { background-color: #e8f0fe; color: #0056d2; font-weight: 600; }
+
+/* ==========================================================================
+   10. MODAL POPUP EVALUATION QUIZ WINDOW OVERLAY
+   ========================================================================== */
+.quiz-modal-overlay {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); display: none;
+    align-items: center; justify-content: center; z-index: 2000;
+}
+.quiz-card {
+    background: #ffffff; border-radius: 8px; width: 100%; max-width: 550px;
+    padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.quiz-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.close-modal-btn { background: none; border: none; font-size: 28px; cursor: pointer; color: #aaa; }
+.close-modal-btn:hover { color: #333; }
+.quiz-instruction { font-size: 14px; color: #555; margin-bottom: 20px; }
+.quiz-question-block { background-color: #f8f9fa; padding: 20px; border-radius: 6px; margin-bottom: 24px; border: 1px solid #e5e5e5;}
+.question-text { font-size: 15px; margin-bottom: 14px; color: #1f1f1f; line-height: 1.4; }
+.quiz-radio-option { display: flex; align-items: center; gap: 10px; font-size: 14px; margin-bottom: 12px; cursor: pointer; padding: 8px; border: 1px solid transparent; border-radius: 4px;}
+.quiz-radio-option:hover { background-color: #e9ecef; }
+
+/* ==========================================================================
+   11. PRINTABLE DYNAMIC GRADUATION CERTIFICATE CANVAS 
+   ========================================================================== */
+.print-actions-toolbar {
+    max-width: 1000px; margin: 20px auto; display: flex; gap: 15px; justify-content: center;
+}
+.certificate-canvas {
+    width: 1000px; height: 700px; background-color: #ffffff; margin: 0 auto 40px auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15); display: grid; grid-template-columns: 220px 1fr;
+    position: relative; overflow: hidden; border: 4px solid #ffffff; outline: 1px solid #dcdcdc;
+}
+.cert-branding-sidebar {
+    background-color: #031b33; color: #ffffff; padding: 40px 20px;
+    display: flex; flex-direction: column; justify-content: space-between; align-items: center;
+}
+.cert-logo-wrapper { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px;}
+.cert-logo-wrapper i { font-size: 40px; color: #ffffff; }
+.cert-logo-wrapper span { font-size: 13px; font-weight: bold; letter-spacing: 1.5px; }
+.cert-qr-wrapper i { font-size: 110px; opacity: 0.85; color: #ffffff; }
+
+.cert-content-body { padding: 50px 60px; position: relative; display: flex; flex-direction: column; justify-content: center; }
+
+/* Golden seal components layer alignments */
+.cert-gold-badge-container { position: absolute; top: 40px; right: 60px; display: flex; flex-direction: column; align-items: center; }
+.gold-seal-badge {
+    width: 95px; height: 95px; background: radial-gradient(circle, #ffe082 0%, #ffb300 100%);
+    border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    border: 3px dotted #ff8f00; outline: 2px solid #ffb300; box-shadow: 0 4px 10px rgba(0,0,0,0.1); z-index: 2;
+}
+.star-row { font-size: 8px; color: #ff8f00; margin-bottom: 2px; }
+.gold-seal-badge strong { font-size: 18px; color: #031b33; font-weight: bold; font-family: serif; }
+.gold-seal-badge small { font-size: 8px; color: #031b33; font-weight: bold; letter-spacing: 0.5px; }
+.ribbon-tail {
+    width: 45px; height: 60px; background-color: #031b33; position: absolute; bottom: -35px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 75%, 0% 100%); z-index: 1; opacity: 0.95;
+}
+
+.cert-main-header { font-family: serif; font-size: 58px; font-weight: bold; color: #000000; letter-spacing: 4px; line-height: 1; }
+.cert-sub-header { font-size: 26px; font-weight: bold; letter-spacing: 2px; color: #1f1f1f; margin-bottom: 35px; margin-top: 5px;}
+.cert-intro-text { font-size: 16px; font-style: italic; color: #636363; margin-bottom: 15px; }
+
+/* Elegant handwriting signature script rules variables styling */
+.cert-recipient-name { font-size: 54px; font-weight: bold; color: #000000; border-bottom: 2px solid #dcdcdc; padding-bottom: 8px; margin-bottom: 30px; display: inline-block; font-family: system-ui, sans-serif; }
+.cert-verification-declaration { font-size: 15px; color: #444; line-height: 1.6; margin-bottom: 45px; }
+.cert-verification-declaration strong { color: #000000; font-size: 16px; }
+.cert-verification-declaration span { font-style: italic; color: #636363; font-size: 14px; }
+
+.cert-signature-row { display: flex; justify-content: space-between; margin-top: 10px; width: 100%; max-width: 600px;}
+.sig-block { display: flex; flex-direction: column; text-align: left; }
+.sig-line { width: 220px; border-bottom: 1px solid #aaaaaa; padding-bottom: 5px; margin-bottom: 8px; font-size: 20px; font-style: italic; color: #222; }
+.sig-block strong { font-size: 13px; color: #000000; }
+.sig-block span { font-size: 11px; color: #636363; font-weight: bold; letter-spacing: 0.5px; }
+
+.cert-hash-tracker { font-size: 10px; color: #999999; font-family: monospace; position: absolute; bottom: 20px; left: 60px; }
+
+/* Hard copy printing instruction layout formatting rules standard overrides */
+@media print {
+    body { background-color: #ffffff !important; padding: 0 !important; margin: 0 !important; }
+    .print-actions-toolbar, .navbar { display: none !important; }
+    .certificate-canvas { box-shadow: none !important; margin: 0 !important; border: none !important; page-break-inside: avoid; }
+}

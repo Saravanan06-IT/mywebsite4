@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM | Learning Workspace</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="dashboard.html" class="logo"><i class="fas fa-chevron-left" style="font-size: 16px; margin-right: 10px;"></i> TOM</a>
+            <span id="workspaceCourseTitle" style="font-weight: 600; font-size: 16px; color: #555;">Course Workspace</span>
+        </div>
+        <div class="nav-right">
+            <button class="btn-primary" id="openQuizBtn" style="background-color: #2b7a1d;"><i class="fas fa-graduation-cap"></i> Take Final Quiz</button>
+        </div>
+    </header>
+
+    <div class="workspace-layout">
+        
+        <main class="video-main-panel">
+            <div class="video-wrapper">
+                <iframe id="videoPlayer" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Course Lecture Player" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div class="materials-tab">
+                <h3>About this Module</h3>
+                <p>Welcome to this section. Download the accompanying lecture notes, reading modules, and repository files below to prepare for the final evaluation quiz.</p>
+                <div class="download-resources">
+                    <a href="#" class="resource-link"><i class="far fa-file-pdf"></i> Download Lecture Slides.pdf</a>
+                    <a href="#" class="resource-link"><i class="fas fa-code"></i> Download Workspace Datasets.zip</a>
+                </div>
+            </div>
+        </main>
+
+        <aside class="syllabus-sidebar">
+            <h3>Course Curriculum</h3>
+            
+            <div class="module-group">
+                <div class="module-group-header">Module 1: Fundamental Concepts</div>
+                <div class="lecture-item item-active" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                    <i class="far fa-play-circle"></i> <span>1.1 Introduction and Core Architecture Overview</span>
+                </div>
+                <div class="lecture-item" data-video="https://www.youtube.com/embed/tgbNymZ7vqY">
+                    <i class="far fa-play-circle"></i> <span>1.2 Environment Setup and Configurations</span>
+                </div>
+            </div>
+
+            <div class="module-group">
+                <div class="module-group-header">Module 2: Practical Implementations</div>
+                <div class="lecture-item" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ">
+                    <i class="far fa-play-circle"></i> <span>2.1 Building First Data Models Structures</span>
+                </div>
+                <div class="lecture-item" data-video="https://www.youtube.com/embed/tgbNymZ7vqY">
+                    <i class="far fa-play-circle"></i> <span>2.2 Optimizations and Verification Protocols</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <div class="quiz-modal-overlay" id="quizModal">
+        <div class="quiz-card">
+            <div class="quiz-header">
+                <h2>Final Evaluation Quiz</h2>
+                <button class="close-modal-btn" id="closeQuizBtn">&times;</button>
+            </div>
+            <form id="evaluationQuizForm">
+                <p class="quiz-instruction">Answer the following comprehensive structural baseline question correctly to unlock graduation certification:</p>
+                
+                <div class="quiz-question-block">
+                    <p class="question-text"><strong>Question 1:</strong> Which option represents the primary mechanism used to handle cross-page routing parameters safely inside basic static modern browsers?</p>
+                    <label class="quiz-radio-option">
+                        <input type="radio" name="q1" value="wrong1" required> Application memory state local cache files
+                    </label>
+                    <label class="quiz-radio-option">
+                        <input type="radio" name="q1" value="correct"> URL Query Parameters via URLSearchParams API
+                    </label>
+                    <label class="quiz-radio-option">
+                        <input type="radio" name="q1" value="wrong2"> Standard CSS pseudo-element injection rules
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-primary form-submit-btn" style="background-color: #2b7a1d;">Submit Evaluation Answers</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

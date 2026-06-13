@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOM | Log In</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="nav-left">
+            <a href="index.html" class="logo">TOM</a>
+            <button class="btn-explore" id="exploreBtn">Explore <i class="fas fa-chevron-down"></i></button>
+            <div class="search-container">
+                <input type="text" placeholder="What do you want to learn?" id="searchInput">
+                <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="nav-right">
+            <a href="enterprise.html" class="nav-link">For Enterprise</a>
+            <a href="students.html" class="nav-link">For Students</a>
+            <a href="login.html" class="login-link active">Log In</a>
+            <a href="signup.html" class="btn-primary-link"><button class="btn-primary">Join for Free</button></a>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="form-card">
+            <h2>Welcome Back</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="Enter your email">
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="btn-primary form-submit-btn">Log In</button>
+            </form>
+            <p class="form-footer-text">New to TOM? <a href="signup.html">Create an account</a></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
